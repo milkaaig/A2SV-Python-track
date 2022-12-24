@@ -1,0 +1,14 @@
+gensize, disjsize = list(map(int, input().split()))
+inhap = 0
+arr = list(map(int, input().split()))
+A = set (map(int, input().split()))
+B = set (map(int,input().split()))
+checker= 0
+while checker < len(arr):
+    if arr[checker] in A:
+        inhap+=1
+        checker+=1
+    elif arr[checker] in B:
+        inhap-=1
+        checker+=1
+print(inhap)
