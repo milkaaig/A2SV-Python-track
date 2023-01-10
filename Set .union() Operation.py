@@ -1,0 +1,6 @@
+enum = int(input())
+eset = set(input().split())
+fnum = int(input())
+fset = set(input().split())
+rset = eset.union(fset)
+print(len(rset))
