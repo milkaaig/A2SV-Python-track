@@ -9,26 +9,22 @@ class Solution:
         while inc < size-1:
             if arr[inc] == arr[inc + 1]:
                 return False
-            elif arr[inc] > arr[inc + 1]:
+            if arr[inc] > arr[inc + 1]:
                 mount = inc
                 break
             
             inc += 1
-            
-        if mount == 0:
-             return False
-            
-        dec = mount
-        while dec < size -1:
-            if arr[dec] == arr[dec + 1]:
-                 return False
-            elif arr[dec] < arr[dec+1]:
-                return False
-            
-            dec += 1
-        return True
-        
-           
+        if mount != 0:
+            dec = mount
+            while dec < size -1:
+                if arr[dec] < arr[dec+1]:
+                    return False
+                elif arr[dec] == arr[dec + 1]:
+                     return False
+                dec += 1
+            return True
+        else: 
+            return False
             
             
         
