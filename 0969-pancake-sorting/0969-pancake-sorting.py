@@ -1,7 +1,6 @@
 class Solution:
     def pancakeSort(self, arr: List[int]) -> List[int]:
         output = []
-
         l = 0
         r = len(arr) 
         
@@ -18,9 +17,9 @@ class Solution:
             if sorted(arr) == arr:
                 break
                 
-            z = arr[l : r]
-            z.reverse()
-            arr[l : r] = z
+            rev = arr[l : r]
+            rev.reverse()
+            arr[l : r] = rev
             output.append(r)
             r -= 1
             
