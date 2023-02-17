@@ -22,7 +22,9 @@ class Solution:
                     output += word2[j]
                     j += 1
                 
-        output += word1[i: ] + word2[j: ]
-        
+        output += word1[i:]
+        output += word2[j:]
         return output
+        
+       
                 
