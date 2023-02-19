@@ -13,13 +13,12 @@ class Solution:
       
         
         prev = None
-        next = None
-     
+        nnode = None
+        
         while head:
-            
-            next = head.next
+            nnode = head.next
             head.next = prev
             prev = head
-            head = next
+            head = nnode
             
         return prev
