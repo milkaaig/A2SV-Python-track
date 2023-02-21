@@ -12,7 +12,6 @@ class Solution:
             t = t.next
             r = r.next.next
         
-        
         prev = None
         
         while t:
@@ -20,7 +19,8 @@ class Solution:
             t.next = prev
             prev = t
             t = temp
-        while head  and prev :
+            
+        while prev:
             if head.val != prev.val:
                 return False
             head = head.next
