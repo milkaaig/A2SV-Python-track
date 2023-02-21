@@ -3,39 +3,46 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-#        segment to be reversed
-        rev = right - left
-        if  rev == 0:
-            return head
-        
-        #left side of the segment
-        outdum = ListNode(0, head)
-        outdum.next = head
-        lefty = outdum
+        lefty = head
+        dummy = ListNode(0)
+        dummy.next = head
+        start = dummy
         
         for i in range(left - 1):
+            start = lefty
             lefty = lefty.next
+            
+        prev = None
+        curr = lefty
+       
         
-        prev = lefty.next
-        segment = lefty.next
-        curr = prev.next
-        
-        l = left
-        while l < right:
-            nekst = curr.next
+        seg = right - left
+        for i in range(seg + 1):
+            temp = curr.next
             curr.next = prev
             prev = curr
-            curr = nekst
-            l += 1
+            curr = temp
         
-        lefty.next = prev
-        segment.next = curr
-       
-        # print(lefty.next)
-       
-       
-        outdum = outdum.next
+        start.next = prev
+        lefty.next = curr
         
-        return outdum
+        
+        return dummy.next
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+      
+        
+    
+       
+            
