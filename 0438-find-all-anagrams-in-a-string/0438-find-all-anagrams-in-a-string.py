@@ -12,10 +12,8 @@ class Solution:
         while i <= len(s):
             if p == cwindow:
                 output.append(i - k)
-                
             if i >= len(s):
                 break
-                
             window += s[i]
             window = window[1:]
             cwindow = Counter(window)
