@@ -4,8 +4,7 @@ class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         k = len(p)
         p = Counter(p)
-        window = s[:k]
-        cwindow = Counter(window)
+        cwindow = Counter(s[: k])
         output = []
         
         i = k 
@@ -14,9 +13,14 @@ class Solution:
                 output.append(i - k)
             if i >= len(s):
                 break
-            window += s[i]
-            window = window[1:]
-            cwindow = Counter(window)
+                
+            cwindow[s[i - k]] -= 1
+            
+            if cwindow[s[i - k]] == 0:
+                del cwindow[s[i - k]]
+                
+            cwindow[s[i]] += 1
+
             i += 1
         
         
