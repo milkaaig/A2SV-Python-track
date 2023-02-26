@@ -15,7 +15,10 @@ class Solution:
                 tickets[i] -= 1
                 output += 1 
 
-            i = (i + 1) % len(tickets) 
+            i += 1
+            
+            if i == size:
+                i = 0
             
         return output
             
