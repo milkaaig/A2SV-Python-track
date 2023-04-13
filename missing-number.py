@@ -1,9 +1,11 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        length = len(nums)
-        xor = length
-        
-        for i in range(length):
-            xor ^= nums[i] ^ i
-
-        return xor
+        nums.sort()
+        n = len(nums)
+        # print(n)
+        # checks if every number matches it's index 
+        for i in range(n):
+            #if not prints the index
+            if i != nums[i]:
+                return i
+        return (n)
