@@ -6,15 +6,21 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        linked = head
-        dic = {}
+       
+        rab = head
+         #what if the linkedlist has only one node 
+        tur = None
 
-        while head:
-            if head.next in dic:
+        while rab and rab.next :
+                
+            if rab == tur and tur:
                 return True
+
+            if tur:
+                tur = tur.next
             else:
-                dic[head.next] = 1
+                tur = rab.next
 
-            head = head.next
-
+            rab = rab.next.next
+        
         return False
